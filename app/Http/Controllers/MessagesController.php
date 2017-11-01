@@ -18,7 +18,7 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
+        $messages = Message::paginate(15);  //paginate 追加
 
         return view('messages.index', [
             'messages' => $messages,

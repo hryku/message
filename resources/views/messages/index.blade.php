@@ -4,6 +4,8 @@
 
     <h1>メッセージ一覧</h1>
 
+    {!! link_to_route('messages.create', '新規メッセージを投稿する', null, ['class' => 'btn btn-success']) !!}
+
     @if (count($messages) > 0)
        <table class="table table-striped">
           <thead>
@@ -24,7 +26,6 @@
           </tbody>
         </table>
     @endif
-
-    {!! link_to_route('messages.create', '新規メッセージを投稿する', null, ['class' => 'btn btn-success']) !!}
+    {!! $messages->render() !!}  <!-- paginate 追加-->
 
 @endsection
